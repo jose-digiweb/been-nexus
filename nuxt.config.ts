@@ -9,6 +9,10 @@ export default defineNuxtConfig({
       deployConfig: true,
       nodeCompat: true,
     },
+
+    experimental: {
+      database: true,
+    },
   },
 
   modules: ['nitro-cloudflare-dev', '@nuxt/eslint'],
