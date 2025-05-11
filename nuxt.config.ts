@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     isEnabled: true,
     disableServerSideAuth: false,
     originEnvKey: 'AUTH_ORIGIN',
-    baseURL: 'http://localhost:3000/api/auth',
+    baseURL: process.env.AUTH_GITHUB_REDIRECT_URL,
     sessionRefresh: {
       enablePeriodically: true,
       enableOnWindowFocus: true,
