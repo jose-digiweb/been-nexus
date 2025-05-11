@@ -17,20 +17,31 @@ export default defineNuxtConfig({
     },
   },
 
-  runtimeConfig: {
-    oauth: {
-      github: {
-        clientId: process.env.NUXT_OAUTH_GITHUB_CLIENT_ID,
-        clientSecret: process.env.NUXT_OAUTH_GITHUB_CLIENT_SECRET,
-        redirectURL: process.env.NUXT_OAUTH_GITHUB_REDIRECT_URL,
-      },
+  auth: {
+    isEnabled: true,
+    disableServerSideAuth: false,
+    originEnvKey: 'AUTH_ORIGIN',
+    baseURL: 'http://localhost:3000/api/auth',
+    sessionRefresh: {
+      enablePeriodically: true,
+      enableOnWindowFocus: true,
     },
+    provider: {
+      type: 'authjs',
+      trustHost: false,
+      defaultProvider: 'github',
+      addDefaultCallbackUrl: true,
+    },
+  },
+
+  runtimeConfig: {
+    authSecret: process.env.AUTH_SECRET,
   },
 
   modules: [
     'nitro-cloudflare-dev',
     '@nuxt/eslint',
     '@nuxt/ui',
-    'nuxt-auth-utils',
+    '@sidebase/nuxt-auth',
   ],
 });

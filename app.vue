@@ -1,37 +1,29 @@
 <script lang="ts" setup>
-const { openInPopup } = useUserSession();
-
-const login = () => {
-  openInPopup('/api/github');
-};
+const { signIn, signOut, data } = useAuth();
 </script>
 
 <template>
   <UApp>
-    <AuthState v-slot="{ user, loggedIn, clear }">
-      <div class="flex items-center justify-between p-4">
-        <h1>Been Nexus</h1>
+    <div class="flex items-center justify-between p-4">
+      <h1>Been Nexus</h1>
 
+      <div class="flex items-center">
         <UDropdownMenu
-          v-if="loggedIn"
+          v-if="data?.user"
           :items="[
             {
-              label: 'Profile',
-              icon: 'i-lucide-user',
-              to: '/',
-            },
-            {
-              label: 'Logout',
-              icon: 'i-lucide-log-out',
-              onSelect: clear,
+              label: 'Sign out',
+              icon: 'lucide-logout',
+              onSelect: () => signOut(),
             },
           ]"
         >
-          <UAvatar v-if="user" :src="user.avatar" />
+          <UAvatar v-if="data.user?.image" :src="data.user.image" />
+          <UAvatar v-else icon="lucide-user-round" />
         </UDropdownMenu>
 
-        <UButton v-else @click="login">Login</UButton>
+        <UButton v-else @click="signIn('github')">Sign in</UButton>
       </div>
-    </AuthState>
+    </div>
   </UApp>
 </template>
