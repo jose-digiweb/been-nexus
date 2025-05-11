@@ -2,6 +2,8 @@
 export default defineNuxtConfig({
   compatibilityDate: '2024-11-01',
   devtools: { enabled: true },
+  css: ['~/assets/css/main.css'],
+
   nitro: {
     preset: 'cloudflare-module',
 
@@ -15,5 +17,20 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['nitro-cloudflare-dev', '@nuxt/eslint'],
+  runtimeConfig: {
+    oauth: {
+      github: {
+        clientId: process.env.NUXT_OAUTH_GITHUB_CLIENT_ID,
+        clientSecret: process.env.NUXT_OAUTH_GITHUB_CLIENT_SECRET,
+        redirectURL: process.env.NUXT_OAUTH_GITHUB_REDIRECT_URL,
+      },
+    },
+  },
+
+  modules: [
+    'nitro-cloudflare-dev',
+    '@nuxt/eslint',
+    '@nuxt/ui',
+    'nuxt-auth-utils',
+  ],
 });
