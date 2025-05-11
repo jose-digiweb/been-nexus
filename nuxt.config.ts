@@ -21,7 +21,7 @@ export default defineNuxtConfig({
     isEnabled: true,
     disableServerSideAuth: false,
     originEnvKey: 'AUTH_ORIGIN',
-    baseURL: 'http://localhost:3000/api/auth',
+    baseURL: 'https://been-nexus.josefurtado-digital.workers.dev/api/auth',
     sessionRefresh: {
       enablePeriodically: true,
       enableOnWindowFocus: true,
