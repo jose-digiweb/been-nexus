@@ -20,7 +20,7 @@ export default defineNuxtConfig({
   auth: {
     isEnabled: true,
     disableServerSideAuth: false,
-    originEnvKey: 'NUXT_AUTH_ORIGIN',
+    baseURL: process.env.AUTH_ORIGIN,
     sessionRefresh: {
       enablePeriodically: true,
       enableOnWindowFocus: true,
@@ -34,9 +34,6 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
-    public: {
-      AUTH_ORIGIN: process.env.NUXT_AUTH_ORIGIN,
-    },
     authSecret: process.env.AUTH_SECRET,
   },
 
