@@ -21,7 +21,6 @@ export default defineNuxtConfig({
     isEnabled: true,
     disableServerSideAuth: false,
     originEnvKey: 'AUTH_ORIGIN',
-    baseURL: 'https://been-nexus.josefurtado-digital.workers.dev/api/auth',
     sessionRefresh: {
       enablePeriodically: true,
       enableOnWindowFocus: true,
@@ -35,6 +34,9 @@ export default defineNuxtConfig({
   },
 
   runtimeConfig: {
+    public: {
+      AUTH_ORIGIN: process.env.NUXT_AUTH_ORIGIN,
+    },
     authSecret: process.env.AUTH_SECRET,
   },
 
