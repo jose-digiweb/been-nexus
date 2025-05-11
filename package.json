@@ -20,6 +20,7 @@
     "@cloudflare/workers-types": "^4.20250510.0",
     "nitro-cloudflare-dev": "^0.2.2",
     "nitropack": "^2.11.11",
+    "typescript": "^5.8.3",
     "wrangler": "^4.14.4"
   }
 }
