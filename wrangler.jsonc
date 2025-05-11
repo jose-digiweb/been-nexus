@@ -1,0 +1,13 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "been-nexus",
+  "main": "./.output/server/index.mjs",
+  "compatibility_date": "2025-05-10",
+  "assets": {
+    "binding": "ASSETS",
+    "directory": "./.output/public"
+  },
+  "observability": {
+    "enabled": true
+  }
+}
