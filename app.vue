@@ -1,5 +1,10 @@
-<script setup lang="ts">
-const user = useLogtoUser();
+<script lang="ts" setup>
+const { loggedIn, user } = useAuth();
+
+console.log({
+  loggedIn,
+  user,
+});
 </script>
 
 <template>
@@ -7,10 +12,14 @@ const user = useLogtoUser();
     <div class="flex items-center justify-between p-4">
       <h1>Been Nexus</h1>
 
-      <div class="flex items-center gap-4">
-        <h2 v-if="user">Hello, {{ user.name }}!</h2>
+      <div class="flex items-center">
+        <div v-if="loggedIn && user" class="flex items-center gap-2">
+          <h2>Welcome back, {{ user.given_name }}</h2>
+          <UIcon name="lucide-minus" />
+          <NuxtLink to="/api/logout" external>Sign out</NuxtLink>
+        </div>
 
-        <a v-else href="/sign-in">Sign in</a>
+        <NuxtLink v-else to="/api/login" external>Sign in</NuxtLink>
       </div>
     </div>
   </UApp>
