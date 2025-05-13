@@ -10,7 +10,7 @@ const user = useLogtoUser();
       <div class="flex items-center gap-4">
         <h2 v-if="user">Hello, {{ user.name }}!</h2>
 
-        <a v-else href="/sign-in">Login</a>
+        <a v-else href="/sign-in">Sign in</a>
       </div>
     </div>
   </UApp>
