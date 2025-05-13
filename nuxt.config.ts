@@ -17,30 +17,5 @@ export default defineNuxtConfig({
     },
   },
 
-  auth: {
-    isEnabled: true,
-    disableServerSideAuth: false,
-    baseURL: process.env.AUTH_ORIGIN,
-    sessionRefresh: {
-      enablePeriodically: true,
-      enableOnWindowFocus: true,
-    },
-    provider: {
-      type: 'authjs',
-      trustHost: false,
-      defaultProvider: 'github',
-      addDefaultCallbackUrl: true,
-    },
-  },
-
-  runtimeConfig: {
-    authSecret: process.env.AUTH_SECRET,
-  },
-
-  modules: [
-    'nitro-cloudflare-dev',
-    '@nuxt/eslint',
-    '@nuxt/ui',
-    '@sidebase/nuxt-auth',
-  ],
+  modules: ['nitro-cloudflare-dev', '@nuxt/eslint', '@nuxt/ui'],
 });
