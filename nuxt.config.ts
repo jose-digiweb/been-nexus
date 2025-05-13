@@ -17,5 +17,14 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['nitro-cloudflare-dev', '@nuxt/eslint', '@nuxt/ui'],
+  modules: ['nitro-cloudflare-dev', '@nuxt/eslint', '@nuxt/ui', '@logto/nuxt'],
+
+  runtimeConfig: {
+    logto: {
+      endpoint: process.env.NUXT_LOGTO_ENDPOINT,
+      appId: process.env.NUXT_LOGTO_APP_ID,
+      appSecret: process.env.NUXT_LOGTO_APP_SECRET,
+      cookieEncryptionKey: process.env.NUXT_LOGTO_COOKIE_ENCRYPTION_KEY,
+    },
+  },
 });
