@@ -10,14 +10,6 @@
   "observability": {
     "enabled": true
   },
-  "vars": {
-    "NUXT_KINDE_CLIENT_ID": "4d54adf4ddd34d73aaaf1e1e3d0570b4",
-    "NUXT_KINDE_CLIENT_SECRET": "iBCMNbUeKe1qTxVwbtugmuStvjWzFjuAPAysZitRoFlBY33xS",
-    "NUXT_KINDE_AUTH_DOMAIN": "https://josedigiweb.kinde.com",
-    "NUXT_KINDE_REDIRECT_URL": "https://been-nexus.josedigiweb.com/api/callback",
-    "NUXT_KINDE_LOGOUT_REDIRECT_URL": "https://been-nexus.josedigiweb.com",
-    "NUXT_KINDE_POST_LOGIN_REDIRECT_URL": "https://been-nexus.josedigiweb.com/dashboard"
-  },
   "d1_databases": [
     {
       "binding": "DB",
