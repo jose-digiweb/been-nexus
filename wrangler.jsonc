@@ -15,7 +15,7 @@
       "binding": "DB",
       "database_name": "been-nexus-db",
       "database_id": "a7e16bbc-5fe3-443f-9e8f-4204882dd63a",
-      "migrations_dir": "lib/db/migrations"
+      "migrations_dir": "server/lib/db/migrations"
     }
   ]
 }
