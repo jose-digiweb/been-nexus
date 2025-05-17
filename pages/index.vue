@@ -24,9 +24,7 @@
             to="/places"
             class="bg-secondary text-slate-900 px-4 py-2 rounded-lg text-sm md:text-base items-center flex"
           >
-            <span class="font-bold">
-              <span class="hidden md:inline">Manage</span> Your Places
-            </span>
+            <span class="font-bold">My Nexus</span>
 
             <UIcon name="lucide:map-pin" size="22" class="ml-2" />
           </NuxtLink>
