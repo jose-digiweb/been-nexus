@@ -9,6 +9,7 @@ export const placeLog = sqliteTable('placeLog', {
   lng: real().notNull(),
   startedAt: int().notNull(),
   endedAt: int().notNull(),
+  userId: int().notNull(),
   placeId: int()
     .notNull()
     .references(() => place.id),

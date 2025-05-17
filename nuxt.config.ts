@@ -17,5 +17,12 @@ export default defineNuxtConfig({
     },
   },
 
-  modules: ['nitro-cloudflare-dev', '@nuxt/eslint', '@nuxt/ui', '@clerk/nuxt'],
+  modules: [
+    'nitro-cloudflare-dev',
+    '@nuxt/eslint',
+    '@nuxt/ui',
+    '@clerk/nuxt',
+    '@pinia/nuxt',
+    '@formkit/auto-animate/nuxt',
+  ],
 });

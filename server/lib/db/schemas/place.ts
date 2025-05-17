@@ -7,6 +7,7 @@ export const place = sqliteTable('place', {
   description: text(),
   lat: real().notNull(),
   lng: real().notNull(),
+  userId: int().notNull(),
   createdAt: int()
     .notNull()
     .$default(() => Date.now()),

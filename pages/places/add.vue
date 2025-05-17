@@ -1,3 +1,3 @@
 <template>
-  <h1>Places here</h1>
+  <h1>Add Places</h1>
 </template>

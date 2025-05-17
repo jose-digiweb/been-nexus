@@ -7,6 +7,7 @@ export const placeLogImage = sqliteTable('placeLogImage', {
   placeLogId: int()
     .notNull()
     .references(() => placeLog.id),
+  userId: int().notNull(),
   createdAt: int()
     .notNull()
     .$default(() => Date.now()),
