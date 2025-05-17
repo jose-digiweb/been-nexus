@@ -4,6 +4,8 @@ import { user } from '~/lib/db/schemas';
 export default defineEventHandler(async event => {
   const db = drizzle(event.context.cloudflare.env.DB);
 
+  console.log('UserId => ', event.context.auth.userId);
+
   const results = await db.select().from(user).all();
 
   return {
